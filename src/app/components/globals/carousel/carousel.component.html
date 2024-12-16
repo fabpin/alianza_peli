@@ -1,0 +1,42 @@
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade">
+  <div class="carousel-indicators">
+    @if(upcoming && upcoming.length > 0) {
+      @for (item of upcoming; track item.id) {
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="item.id" aria-label="Slide 1" [class.active]="item.active" [attr.aria-current]="item.active"></button>
+      }
+    }
+    @else {
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-label="Slide 1" [class.active]="true" [attr.aria-current]="true"></button>
+    }
+  </div>
+  <div class="carousel-inner">
+    @if(upcoming && upcoming.length > 0) {
+      @for (item of upcoming; track item.id) {
+        <div class="carousel-item" [class.active]="item.active">
+          <img src="https://image.tmdb.org/t/p/w1920_and_h1080_face{{item.backdrop_path}}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{item.original_title}}</h5>
+            <p>{{item.overview}}</p>
+          </div>
+        </div>
+      }
+    }
+    @else {
+      <div class="carousel-item" [class.active]="true">
+        <img src="./assets/peakpx.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Error</h5>
+          <p>Ocurrio un error</p>
+        </div>
+      </div>
+    }
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" (click)="previous()">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" (click)="next()">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

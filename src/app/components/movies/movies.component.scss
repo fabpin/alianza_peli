@@ -1,0 +1,39 @@
+.movies{
+  font-family: 'Ubuntu-Regular';
+  .container-fluid{
+    display: flex;
+    .pagination{
+      .page-item{
+        .disable{
+          cursor: none;
+          pointer-events: none;
+          opacity: 0.5;
+        }
+        .page-link:hover{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .container{
+    .row{
+      .col-12{
+        .row{
+          .card{
+            padding-left: 0px;
+            margin: 1%;
+            .row{
+              .col-md-8{
+                .card-body{
+                  .card-text{
+                    margin-bottom: 0.3rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

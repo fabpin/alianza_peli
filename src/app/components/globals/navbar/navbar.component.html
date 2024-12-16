@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" (click)="refresh()">Alianza Peli</a>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <form class="d-flex" role="search" [formGroup]="searchForm" (ngSubmit)="handleSubmit()">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" formControlName="search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

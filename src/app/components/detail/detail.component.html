@@ -1,0 +1,143 @@
+<div class="detail">
+  <div class="container text-center">
+    <button class="btn btn-primary" (click)="backPage()">Back</button>
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6">
+            <p>Title</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.original_title}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Budget</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.budget}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Homepage</p>
+          </div>
+          <div class="col-6">
+            <a href="{{movieDetail.homepage}}">{{movieDetail.homepage}}</a>
+          </div>
+        </div>
+        <!--<div class="row">
+          <div class="col-6">
+            <p>Genres</p>
+          </div>
+          <div class="col-6">
+            @if(movieDetail.genres && movieDetail.genres.length > 0){
+              <ul>
+                @for (genre of movieDetail.genres; track genre.id) {
+                  @if(genre?.name) {
+                    <li class="genres">{{genre?.name}}</li>
+                  }
+                }
+              </ul>
+            }
+          </div>
+        </div>-->
+        <div class="row">
+          <div class="col-6">
+            <p>ID</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.id}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>IMDB ID</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.imdb_id}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Overview</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.overview}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Popularity</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.popularity}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Release Date</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.release_date}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Revenue</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.revenue}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Runtime</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.runtime}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Status</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.status}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Vote Average</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.vote_average}}/10</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Vote Count</p>
+          </div>
+          <div class="col-6">
+            <p>{{movieDetail.vote_count}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p>Its For Adult only</p>
+          </div>
+          <div class="col-6">
+            @if(movieDetail.adult) {
+              <p>Yes</p>
+            }
+            @else {
+              <p>No</p>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="backPage()">Back</button>
+  </div>
+</div>

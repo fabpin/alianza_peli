@@ -1,0 +1,70 @@
+<div class="movies">
+  <div class="container-fluid justify-content-center">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" (click)="previous()">Previous</a></li>
+        <li class="page-item">
+          <a class="page-link"
+            [class.active]="page === first_pagination"
+            (click)="pagination(first_pagination)">
+              {{first_pagination}}
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link"
+             [class.active]="page === second_pagination"
+             [class.disable]="!(second_pagination <= last_page)"
+             (click)="pagination(second_pagination)">
+            {{second_pagination}}
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link"
+             [class.active]="page === third_pagination"
+             [class.disable]="!(third_pagination <= last_page)"
+             (click)="pagination(third_pagination)">
+            {{third_pagination}}
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link"
+             (click)="next()">
+            Next
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-12">
+        <div class="row justify-content-md-center">
+          @if(movies && movies.length > 0) {
+            @for (item of movies; track item.id) {
+              <div class="card mb-3" style="max-width: 340px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="https://media.themoviedb.org/t/p/w220_and_h330_face{{item.poster_path}}" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <p class="card-text">{{item.overview}}</p>
+                      <p class="card-text"><small class="text-body-secondary">{{item.release_date}}</small></p>
+                      <button class="btn btn-primary"(click)="detail(item.id)">Detail</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          }
+          @else {
+            <div class="col-12">
+              <p>Ocurrio un error</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
